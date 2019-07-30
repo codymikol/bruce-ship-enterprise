@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>B.R.U.C.E Ship Enterprise</title>
+
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+
+    <script src="app.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="login/login.container.js"></script>
+    <script src="dashboard/dashboard.controller.js"></script>
+    <script src="dashboard/dashboard.container.js"></script>
+    <script src="filters/newerThanCurrentVersion.js"></script>
+
+</head>
+
+<body ng-app="bruceApp">
+
+<md-toolbar layout="row" layout-padding>
+   <img style="height: 115px;" alt="The BRUCE Ship Enterprise" src="svg/star_trek_starship_enterprise_.svg"> <h1>The B.R.U.C.E Ship Enterprise</h1>
+</md-toolbar>
+
+<div ui-view></div>
+
+</body>
+
+</html>

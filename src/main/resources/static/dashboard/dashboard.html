@@ -1,0 +1,33 @@
+<div>
+
+    <md-card>
+        <md-toolbar layout="row" layout-align="start center" layout-padding>
+            <div class="md-headline">Client List</div>
+        </md-toolbar>
+        <md-list>
+            <md-list-item ng-repeat="client in $ctrl.clients.data">
+                <div layout="row" style="width:100%;">
+                    <div class="md-body-1" flex="30" layout="row" layout-align="start center">{{client.name}}</div>
+                    <div class="md-body-1" flex="20" layout="row" layout-align="start center">Current: {{client.currentVersion}}</div>
+                    <div class="md-body-1" flex="20" layout="row" layout-align="start center">Status: {{client.status}}</div>
+                    <div flex="50" layout="row" layout-align="end center">
+                        <md-input-container>
+                            <label>Select Version</label>
+                            <md-select ng-disabled="($ctrl.versions.data | newerThanCurrentVersion:client.currentVersion).length == 0"
+                                       ng-model="client.updateVersion"
+                                       style="min-width: 200px;">
+                                <md-option ng-repeat="version in $ctrl.versions.data | newerThanCurrentVersion:client.currentVersion">
+                                    {{version.versionNumber}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                        <md-button ng-disabled="($ctrl.versions.data | newerThanCurrentVersion:client.currentVersion).length == 0">
+                            Schedule Update
+                        </md-button>
+                    </div>
+                </div>
+                <md-divider></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-card>
+</div>
